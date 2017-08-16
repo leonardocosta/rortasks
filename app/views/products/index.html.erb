@@ -61,58 +61,15 @@
   <tbody>
     <% @products.each do |product| %>
       <tr>
-        <td><%= product.code %></td>
-        <td><%= product.name %></td>
-        <td><%= product.model %></td>
-        <td><%= product.sku %></td>
-        <td><%= product.weight %></td>
-        <td><%= product.manufacturer %></td>
-        <td><%= product.status %></td>
-        <td><%= product.taxclass %></td>
-        <td><%= product.urlkey %></td>
-        <td><%= product.visibility %></td>
-        <td><%= product.setproductasnewfromdate %></td>
-        <td><%= product.setproductasnewtodate %></td>
-        <td><%= product.countryofmanufacture %></td>
-        <td><%= product.price %></td>
-        <td><%= product.cost %></td>
-        <td><%= product.specialprice %></td>
-        <td><%= product.specialpricefromdate %></td>
-        <td><%= product.specialpricetodate %></td>
-        <td><%= product.applymap %></td>
-        <td><%= product.displayactualprice %></td>
-        <td><%= product.suggestedretailprice %></td>
-        <td><%= product.metatitle %></td>
-        <td><%= product.metakeywords %></td>
-        <td><%= product.metadescription %></td>
-        <td><%= product.shortdescription %></td>
-        <td><%= product.description %></td>
-        <td><%= product.indepth %></td>
-        <td><%= product.dimensions %></td>
-        <td><%= product.activationinformation %></td>
-        <td><%= product.color %></td>
-        <td><%= product.customdesign %></td>
-        <td><%= product.activefrom %></td>
-        <td><%= product.activeto %></td>
-        <td><%= product.customlayoutupdate %></td>
-        <td><%= product.displayproductoptionsin %></td>
-        <td><%= product.pagelayout %></td>
-        <td><%= product.enablerecurringprofile %></td>
-        <td><%= product.allowgiftmessage %></td>
-        <td><%= product.managestock %></td>
-        <td><%= product.qty %></td>
-        <td><%= product.qtyforitemsstatustobecomeoutofstock %></td>
-        <td><%= product.minimumqtyallowedinshoppingcart %></td>
-        <td><%= product.maximumqtyallowedinshoppingcart %></td>
-        <td><%= product.qtyusesdecimals %></td>
-        <td><%= product.backorders %></td>
-        <td><%= product.notifyforquantitybelow %></td>
-        <td><%= product.enableqtyincrements %></td>
-        <td><%= product.stockavailability %></td>
-        <td><%= product.tags %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= product.code %></td>        <td><%= product.name %></td>        <td><%= product.model %></td>        <td><%= product.sku %></td>        <td><%= product.weight %></td>        <td><%= product.manufacturer %></td>        <td><%= product.status %></td>        <td><%= product.taxclass %></td>        <td><%= product.urlkey %></td>        <td><%= product.visibility %></td>        <td><%= product.setproductasnewfromdate %></td>        <td><%= product.setproductasnewtodate %></td>        <td><%= product.countryofmanufacture %></td>        <td><%= product.price %></td>        <td><%= product.cost %></td>        <td><%= product.specialprice %></td>        <td><%= product.specialpricefromdate %></td>        <td><%= product.specialpricetodate %></td>        <td><%= product.applymap %></td>        <td><%= product.displayactualprice %></td>        <td><%= product.suggestedretailprice %></td>        <td><%= product.metatitle %></td>        <td><%= product.metakeywords %></td>        <td><%= product.metadescription %></td>        <td><%= product.shortdescription %></td>        <td><%= product.description %></td>        <td><%= product.indepth %></td>        <td><%= product.dimensions %></td>        <td><%= product.activationinformation %></td>        <td><%= product.color %></td>        <td><%= product.customdesign %></td>        <td><%= product.activefrom %></td>        <td><%= product.activeto %></td>        <td><%= product.customlayoutupdate %></td>        <td><%= product.displayproductoptionsin %></td>        <td><%= product.pagelayout %></td>        <td><%= product.enablerecurringprofile %></td>        <td><%= product.allowgiftmessage %></td>        <td><%= product.managestock %></td>        <td><%= product.qty %></td>        <td><%= product.qtyforitemsstatustobecomeoutofstock %></td>        <td><%= product.minimumqtyallowedinshoppingcart %></td>        <td><%= product.maximumqtyallowedinshoppingcart %></td>        <td><%= product.qtyusesdecimals %></td>        <td><%= product.backorders %></td>        <td><%= product.notifyforquantitybelow %></td>        <td><%= product.enableqtyincrements %></td>        <td><%= product.stockavailability %></td>        <td><%= product.tags %></td>
+        <div  class="w3-dropdown-hover">
+          <button class="w3-button">Actions</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <%= link_to 'Show', product , :class =>"w3-bar-item w3-button"%>
+          <%= link_to 'Edit', edit_product_path(product) , :class =>"w3-bar-item w3-button"%>
+          <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"w3-bar-item w3-button"%>
+          </div>
+        </div>
       </tr>
     <% end %>
   </tbody>

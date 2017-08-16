@@ -26,23 +26,15 @@
   <tbody>
     <% @courses.each do |course| %>
       <tr>
-        <td><%= course.code %></td>
-        <td><%= course.fullname %></td>
-        <td><%= course.shortname %></td>
-        <td><%= course.courseidnumber %></td>
-        <td><%= course.summary %></td>
-        <td><%= course.format %></td>
-        <td><%= course.numberofweekstopics %></td>
-        <td><%= course.start %></td>
-        <td><%= course.hiddensections %></td>
-        <td><%= course.newsitemstoshow %></td>
-        <td><%= course.showgrades %></td>
-        <td><%= course.showactivityreports %></td>
-        <td><%= course.maxuploadsize %></td>
-        <td><%= course.defaultroles %></td>
-        <td><%= link_to 'Show', course %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= course.code %></td>        <td><%= course.fullname %></td>        <td><%= course.shortname %></td>        <td><%= course.courseidnumber %></td>        <td><%= course.summary %></td>        <td><%= course.format %></td>        <td><%= course.numberofweekstopics %></td>        <td><%= course.start %></td>        <td><%= course.hiddensections %></td>        <td><%= course.newsitemstoshow %></td>        <td><%= course.showgrades %></td>        <td><%= course.showactivityreports %></td>        <td><%= course.maxuploadsize %></td>        <td><%= course.defaultroles %></td>
+        <div  class="w3-dropdown-hover">
+          <button class="w3-button">Actions</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <%= link_to 'Show', course , :class =>"w3-bar-item w3-button"%>
+          <%= link_to 'Edit', edit_course_path(course) , :class =>"w3-bar-item w3-button"%>
+          <%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"w3-bar-item w3-button"%>
+          </div>
+        </div>
       </tr>
     <% end %>
   </tbody>

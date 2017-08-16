@@ -26,23 +26,15 @@
   <tbody>
     <% @campaigns.each do |campaign| %>
       <tr>
-        <td><%= campaign.code %></td>
-        <td><%= campaign.owner %></td>
-        <td><%= campaign.name %></td>
-        <td><%= campaign.active %></td>
-        <td><%= campaign.type %></td>
-        <td><%= campaign.status %></td>
-        <td><%= campaign.start %></td>
-        <td><%= campaign.end %></td>
-        <td><%= campaign.expectedrevenue %></td>
-        <td><%= campaign.budgetedcost %></td>
-        <td><%= campaign.actualcost %></td>
-        <td><%= campaign.expectedresponse %></td>
-        <td><%= campaign.numsent %></td>
-        <td><%= campaign.parentcampaign %></td>
-        <td><%= link_to 'Show', campaign %></td>
-        <td><%= link_to 'Edit', edit_campaign_path(campaign) %></td>
-        <td><%= link_to 'Destroy', campaign, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= campaign.code %></td>        <td><%= campaign.owner %></td>        <td><%= campaign.name %></td>        <td><%= campaign.active %></td>        <td><%= campaign.type %></td>        <td><%= campaign.status %></td>        <td><%= campaign.start %></td>        <td><%= campaign.end %></td>        <td><%= campaign.expectedrevenue %></td>        <td><%= campaign.budgetedcost %></td>        <td><%= campaign.actualcost %></td>        <td><%= campaign.expectedresponse %></td>        <td><%= campaign.numsent %></td>        <td><%= campaign.parentcampaign %></td>
+        <div  class="w3-dropdown-hover">
+          <button class="w3-button">Actions</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <%= link_to 'Show', campaign , :class =>"w3-bar-item w3-button"%>
+          <%= link_to 'Edit', edit_campaign_path(campaign) , :class =>"w3-bar-item w3-button"%>
+          <%= link_to 'Destroy', campaign, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"w3-bar-item w3-button"%>
+          </div>
+        </div>
       </tr>
     <% end %>
   </tbody>

@@ -39,36 +39,15 @@
   <tbody>
     <% @salesforceusers.each do |salesforceuser| %>
       <tr>
-        <td><%= salesforceuser.name %></td>
-        <td><%= salesforceuser.alias %></td>
-        <td><%= salesforceuser.email %></td>
-        <td><%= salesforceuser.username %></td>
-        <td><%= salesforceuser.communitynickname %></td>
-        <td><%= salesforceuser.title %></td>
-        <td><%= salesforceuser.company %></td>
-        <td><%= salesforceuser.department %></td>
-        <td><%= salesforceuser.division %></td>
-        <td><%= salesforceuser.address %></td>
-        <td><%= salesforceuser.timezone %></td>
-        <td><%= salesforceuser.locale %></td>
-        <td><%= salesforceuser.language %></td>
-        <td><%= salesforceuser.delegatedapprover %></td>
-        <td><%= salesforceuser.manager %></td>
-        <td><%= salesforceuser.role %></td>
-        <td><%= salesforceuser.userlicense %></td>
-        <td><%= salesforceuser.profile %></td>
-        <td><%= salesforceuser.active %></td>
-        <td><%= salesforceuser.marketinguser %></td>
-        <td><%= salesforceuser.offlineuser %></td>
-        <td><%= salesforceuser.knowledgeuser %></td>
-        <td><%= salesforceuser.forcecomflowuser %></td>
-        <td><%= salesforceuser.serviceclouduser %></td>
-        <td><%= salesforceuser.sitecomcontributoruser %></td>
-        <td><%= salesforceuser.sitecompublisheruser %></td>
-        <td><%= salesforceuser.mobileuser %></td>
-        <td><%= link_to 'Show', salesforceuser %></td>
-        <td><%= link_to 'Edit', edit_salesforceuser_path(salesforceuser) %></td>
-        <td><%= link_to 'Destroy', salesforceuser, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= salesforceuser.name %></td>        <td><%= salesforceuser.alias %></td>        <td><%= salesforceuser.email %></td>        <td><%= salesforceuser.username %></td>        <td><%= salesforceuser.communitynickname %></td>        <td><%= salesforceuser.title %></td>        <td><%= salesforceuser.company %></td>        <td><%= salesforceuser.department %></td>        <td><%= salesforceuser.division %></td>        <td><%= salesforceuser.address %></td>        <td><%= salesforceuser.timezone %></td>        <td><%= salesforceuser.locale %></td>        <td><%= salesforceuser.language %></td>        <td><%= salesforceuser.delegatedapprover %></td>        <td><%= salesforceuser.manager %></td>        <td><%= salesforceuser.role %></td>        <td><%= salesforceuser.userlicense %></td>        <td><%= salesforceuser.profile %></td>        <td><%= salesforceuser.active %></td>        <td><%= salesforceuser.marketinguser %></td>        <td><%= salesforceuser.offlineuser %></td>        <td><%= salesforceuser.knowledgeuser %></td>        <td><%= salesforceuser.forcecomflowuser %></td>        <td><%= salesforceuser.serviceclouduser %></td>        <td><%= salesforceuser.sitecomcontributoruser %></td>        <td><%= salesforceuser.sitecompublisheruser %></td>        <td><%= salesforceuser.mobileuser %></td>
+        <div  class="w3-dropdown-hover">
+          <button class="w3-button">Actions</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <%= link_to 'Show', salesforceuser , :class =>"w3-bar-item w3-button"%>
+          <%= link_to 'Edit', edit_salesforceuser_path(salesforceuser) , :class =>"w3-bar-item w3-button"%>
+          <%= link_to 'Destroy', salesforceuser, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"w3-bar-item w3-button"%>
+          </div>
+        </div>
       </tr>
     <% end %>
   </tbody>

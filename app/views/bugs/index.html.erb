@@ -35,32 +35,15 @@
   <tbody>
     <% @bugs.each do |bug| %>
       <tr>
-        <td><%= bug.code %></td>
-        <td><%= bug.product %></td>
-        <td><%= bug.component %></td>
-        <td><%= bug.version %></td>
-        <td><%= bug.summary %></td>
-        <td><%= bug.description %></td>
-        <td><%= bug.hardware %></td>
-        <td><%= bug.importance %></td>
-        <td><%= bug.targetmilestone %></td>
-        <td><%= bug.assignedto %></td>
-        <td><%= bug.qacontact %></td>
-        <td><%= bug.url %></td>
-        <td><%= bug.whiteboard %></td>
-        <td><%= bug.keywords %></td>
-        <td><%= bug.tags %></td>
-        <td><%= bug.dependson %></td>
-        <td><%= bug.blocks %></td>
-        <td><%= bug.origestimated %></td>
-        <td><%= bug.hoursworked %></td>
-        <td><%= bug.hoursleft %></td>
-        <td><%= bug.deadline %></td>
-        <td><%= bug.additionalcomments %></td>
-        <td><%= bug.status %></td>
-        <td><%= link_to 'Show', bug %></td>
-        <td><%= link_to 'Edit', edit_bug_path(bug) %></td>
-        <td><%= link_to 'Destroy', bug, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= bug.code %></td>        <td><%= bug.product %></td>        <td><%= bug.component %></td>        <td><%= bug.version %></td>        <td><%= bug.summary %></td>        <td><%= bug.description %></td>        <td><%= bug.hardware %></td>        <td><%= bug.importance %></td>        <td><%= bug.targetmilestone %></td>        <td><%= bug.assignedto %></td>        <td><%= bug.qacontact %></td>        <td><%= bug.url %></td>        <td><%= bug.whiteboard %></td>        <td><%= bug.keywords %></td>        <td><%= bug.tags %></td>        <td><%= bug.dependson %></td>        <td><%= bug.blocks %></td>        <td><%= bug.origestimated %></td>        <td><%= bug.hoursworked %></td>        <td><%= bug.hoursleft %></td>        <td><%= bug.deadline %></td>        <td><%= bug.additionalcomments %></td>        <td><%= bug.status %></td>
+        <div  class="w3-dropdown-hover">
+          <button class="w3-button">Actions</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <%= link_to 'Show', bug , :class =>"w3-bar-item w3-button"%>
+          <%= link_to 'Edit', edit_bug_path(bug) , :class =>"w3-bar-item w3-button"%>
+          <%= link_to 'Destroy', bug, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"w3-bar-item w3-button"%>
+          </div>
+        </div>
       </tr>
     <% end %>
   </tbody>

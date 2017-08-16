@@ -19,16 +19,15 @@
   <tbody>
     <% @testcases.each do |testcase| %>
       <tr>
-        <td><%= testcase.code %></td>
-        <td><%= testcase.title %></td>
-        <td><%= testcase.summary %></td>
-        <td><%= testcase.preconditions %></td>
-        <td><%= testcase.status %></td>
-        <td><%= testcase.importance %></td>
-        <td><%= testcase.minutes %></td>
-        <td><%= link_to 'Show', testcase %></td>
-        <td><%= link_to 'Edit', edit_testcase_path(testcase) %></td>
-        <td><%= link_to 'Destroy', testcase, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= testcase.code %></td>        <td><%= testcase.title %></td>        <td><%= testcase.summary %></td>        <td><%= testcase.preconditions %></td>        <td><%= testcase.status %></td>        <td><%= testcase.importance %></td>        <td><%= testcase.minutes %></td>
+        <div  class="w3-dropdown-hover">
+          <button class="w3-button">Actions</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <%= link_to 'Show', testcase , :class =>"w3-bar-item w3-button"%>
+          <%= link_to 'Edit', edit_testcase_path(testcase) , :class =>"w3-bar-item w3-button"%>
+          <%= link_to 'Destroy', testcase, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"w3-bar-item w3-button"%>
+          </div>
+        </div>
       </tr>
     <% end %>
   </tbody>

@@ -26,23 +26,15 @@
   <tbody>
     <% @bugzillaproducts.each do |bugzillaproduct| %>
       <tr>
-        <td><%= bugzillaproduct.code %></td>
-        <td><%= bugzillaproduct.product %></td>
-        <td><%= bugzillaproduct.description %></td>
-        <td><%= bugzillaproduct.openforbugentry %></td>
-        <td><%= bugzillaproduct.enableunconfirmedstatus %></td>
-        <td><%= bugzillaproduct.maxvotesperperson %></td>
-        <td><%= bugzillaproduct.maxvotespersonperbug %></td>
-        <td><%= bugzillaproduct.confirmbugsvotes %></td>
-        <td><%= bugzillaproduct.version %></td>
-        <td><%= bugzillaproduct.createchartdatasets %></td>
-        <td><%= bugzillaproduct.component %></td>
-        <td><%= bugzillaproduct.componentdescription %></td>
-        <td><%= bugzillaproduct.defaultassignee %></td>
-        <td><%= bugzillaproduct.defaultcclist %></td>
-        <td><%= link_to 'Show', bugzillaproduct %></td>
-        <td><%= link_to 'Edit', edit_bugzillaproduct_path(bugzillaproduct) %></td>
-        <td><%= link_to 'Destroy', bugzillaproduct, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= bugzillaproduct.code %></td>        <td><%= bugzillaproduct.product %></td>        <td><%= bugzillaproduct.description %></td>        <td><%= bugzillaproduct.openforbugentry %></td>        <td><%= bugzillaproduct.enableunconfirmedstatus %></td>        <td><%= bugzillaproduct.maxvotesperperson %></td>        <td><%= bugzillaproduct.maxvotespersonperbug %></td>        <td><%= bugzillaproduct.confirmbugsvotes %></td>        <td><%= bugzillaproduct.version %></td>        <td><%= bugzillaproduct.createchartdatasets %></td>        <td><%= bugzillaproduct.component %></td>        <td><%= bugzillaproduct.componentdescription %></td>        <td><%= bugzillaproduct.defaultassignee %></td>        <td><%= bugzillaproduct.defaultcclist %></td>
+        <div  class="w3-dropdown-hover">
+          <button class="w3-button">Actions</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <%= link_to 'Show', bugzillaproduct , :class =>"w3-bar-item w3-button"%>
+          <%= link_to 'Edit', edit_bugzillaproduct_path(bugzillaproduct) , :class =>"w3-bar-item w3-button"%>
+          <%= link_to 'Destroy', bugzillaproduct, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"w3-bar-item w3-button"%>
+          </div>
+        </div>
       </tr>
     <% end %>
   </tbody>

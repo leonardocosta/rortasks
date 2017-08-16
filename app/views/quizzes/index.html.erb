@@ -24,21 +24,15 @@
   <tbody>
     <% @quizzes.each do |quiz| %>
       <tr>
-        <td><%= quiz.code %></td>
-        <td><%= quiz.name %></td>
-        <td><%= quiz.description %></td>
-        <td><%= quiz.displaydescription %></td>
-        <td><%= quiz.open %></td>
-        <td><%= quiz.close %></td>
-        <td><%= quiz.timelimit %></td>
-        <td><%= quiz.whentimeexpires %></td>
-        <td><%= quiz.submissiongraceperiod %></td>
-        <td><%= quiz.gradecategory %></td>
-        <td><%= quiz.attemptsallowed %></td>
-        <td><%= quiz.gradingmethod %></td>
-        <td><%= link_to 'Show', quiz %></td>
-        <td><%= link_to 'Edit', edit_quiz_path(quiz) %></td>
-        <td><%= link_to 'Destroy', quiz, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= quiz.code %></td>        <td><%= quiz.name %></td>        <td><%= quiz.description %></td>        <td><%= quiz.displaydescription %></td>        <td><%= quiz.open %></td>        <td><%= quiz.close %></td>        <td><%= quiz.timelimit %></td>        <td><%= quiz.whentimeexpires %></td>        <td><%= quiz.submissiongraceperiod %></td>        <td><%= quiz.gradecategory %></td>        <td><%= quiz.attemptsallowed %></td>        <td><%= quiz.gradingmethod %></td>
+        <div  class="w3-dropdown-hover">
+          <button class="w3-button">Actions</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <%= link_to 'Show', quiz , :class =>"w3-bar-item w3-button"%>
+          <%= link_to 'Edit', edit_quiz_path(quiz) , :class =>"w3-bar-item w3-button"%>
+          <%= link_to 'Destroy', quiz, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"w3-bar-item w3-button"%>
+          </div>
+        </div>
       </tr>
     <% end %>
   </tbody>

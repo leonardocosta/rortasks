@@ -32,29 +32,15 @@
   <tbody>
     <% @leads.each do |lead| %>
       <tr>
-        <td><%= lead.code %></td>
-        <td><%= lead.owner %></td>
-        <td><%= lead.firstname %></td>
-        <td><%= lead.lastname %></td>
-        <td><%= lead.company %></td>
-        <td><%= lead.title %></td>
-        <td><%= lead.status %></td>
-        <td><%= lead.phone %></td>
-        <td><%= lead.email %></td>
-        <td><%= lead.street %></td>
-        <td><%= lead.city %></td>
-        <td><%= lead.state %></td>
-        <td><%= lead.zipcode %></td>
-        <td><%= lead.county %></td>
-        <td><%= lead.website %></td>
-        <td><%= lead.numberofemployees %></td>
-        <td><%= lead.annualrevenue %></td>
-        <td><%= lead.source %></td>
-        <td><%= lead.industry %></td>
-        <td><%= lead.description %></td>
-        <td><%= link_to 'Show', lead %></td>
-        <td><%= link_to 'Edit', edit_lead_path(lead) %></td>
-        <td><%= link_to 'Destroy', lead, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= lead.code %></td>        <td><%= lead.owner %></td>        <td><%= lead.firstname %></td>        <td><%= lead.lastname %></td>        <td><%= lead.company %></td>        <td><%= lead.title %></td>        <td><%= lead.status %></td>        <td><%= lead.phone %></td>        <td><%= lead.email %></td>        <td><%= lead.street %></td>        <td><%= lead.city %></td>        <td><%= lead.state %></td>        <td><%= lead.zipcode %></td>        <td><%= lead.county %></td>        <td><%= lead.website %></td>        <td><%= lead.numberofemployees %></td>        <td><%= lead.annualrevenue %></td>        <td><%= lead.source %></td>        <td><%= lead.industry %></td>        <td><%= lead.description %></td>
+        <div  class="w3-dropdown-hover">
+          <button class="w3-button">Actions</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <%= link_to 'Show', lead , :class =>"w3-bar-item w3-button"%>
+          <%= link_to 'Edit', edit_lead_path(lead) , :class =>"w3-bar-item w3-button"%>
+          <%= link_to 'Destroy', lead, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"w3-bar-item w3-button"%>
+          </div>
+        </div>
       </tr>
     <% end %>
   </tbody>

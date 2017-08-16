@@ -21,18 +21,15 @@
   <tbody>
     <% @projects.each do |project| %>
       <tr>
-        <td><%= project.name %></td>
-        <td><%= project.description %></td>
-        <td><%= project.identifier %></td>
-        <td><%= project.homepage %></td>
-        <td><%= project.public %></td>
-        <td><%= project.subprojectof %></td>
-        <td><%= project.bugtracker %></td>
-        <td><%= project.featuretracker %></td>
-        <td><%= project.supporttracker %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= project.name %></td>        <td><%= project.description %></td>        <td><%= project.identifier %></td>        <td><%= project.homepage %></td>        <td><%= project.public %></td>        <td><%= project.subprojectof %></td>        <td><%= project.bugtracker %></td>        <td><%= project.featuretracker %></td>        <td><%= project.supporttracker %></td>
+        <div  class="w3-dropdown-hover">
+          <button class="w3-button">Actions</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <%= link_to 'Show', project , :class =>"w3-bar-item w3-button"%>
+          <%= link_to 'Edit', edit_project_path(project) , :class =>"w3-bar-item w3-button"%>
+          <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"w3-bar-item w3-button"%>
+          </div>
+        </div>
       </tr>
     <% end %>
   </tbody>

@@ -20,17 +20,15 @@
   <tbody>
     <% @bugzillausers.each do |bugzillauser| %>
       <tr>
-        <td><%= bugzillauser.loginname %></td>
-        <td><%= bugzillauser.realname %></td>
-        <td><%= bugzillauser.password %></td>
-        <td><%= bugzillauser.bugmaildisabled %></td>
-        <td><%= bugzillauser.disabletext %></td>
-        <td><%= bugzillauser.adminpermission %></td>
-        <td><%= bugzillauser.creategroupspermission %></td>
-        <td><%= bugzillauser.edituserspermission %></td>
-        <td><%= link_to 'Show', bugzillauser %></td>
-        <td><%= link_to 'Edit', edit_bugzillauser_path(bugzillauser) %></td>
-        <td><%= link_to 'Destroy', bugzillauser, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= bugzillauser.loginname %></td>        <td><%= bugzillauser.realname %></td>        <td><%= bugzillauser.password %></td>        <td><%= bugzillauser.bugmaildisabled %></td>        <td><%= bugzillauser.disabletext %></td>        <td><%= bugzillauser.adminpermission %></td>        <td><%= bugzillauser.creategroupspermission %></td>        <td><%= bugzillauser.edituserspermission %></td>
+        <div  class="w3-dropdown-hover">
+          <button class="w3-button">Actions</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <%= link_to 'Show', bugzillauser , :class =>"w3-bar-item w3-button"%>
+          <%= link_to 'Edit', edit_bugzillauser_path(bugzillauser) , :class =>"w3-bar-item w3-button"%>
+          <%= link_to 'Destroy', bugzillauser, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"w3-bar-item w3-button"%>
+          </div>
+        </div>
       </tr>
     <% end %>
   </tbody>

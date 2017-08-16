@@ -28,25 +28,15 @@
   <tbody>
     <% @issues.each do |issue| %>
       <tr>
-        <td><%= issue.code %></td>
-        <td><%= issue.project %></td>
-        <td><%= issue.issuetype %></td>
-        <td><%= issue.summary %></td>
-        <td><%= issue.storypoints %></td>
-        <td><%= issue.priority %></td>
-        <td><%= issue.duedate %></td>
-        <td><%= issue.components %></td>
-        <td><%= issue.affectsversions %></td>
-        <td><%= issue.fixversions %></td>
-        <td><%= issue.assignee %></td>
-        <td><%= issue.environment %></td>
-        <td><%= issue.description %></td>
-        <td><%= issue.labels %></td>
-        <td><%= issue.epic %></td>
-        <td><%= issue.sprint %></td>
-        <td><%= link_to 'Show', issue %></td>
-        <td><%= link_to 'Edit', edit_issue_path(issue) %></td>
-        <td><%= link_to 'Destroy', issue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= issue.code %></td>        <td><%= issue.project %></td>        <td><%= issue.issuetype %></td>        <td><%= issue.summary %></td>        <td><%= issue.storypoints %></td>        <td><%= issue.priority %></td>        <td><%= issue.duedate %></td>        <td><%= issue.components %></td>        <td><%= issue.affectsversions %></td>        <td><%= issue.fixversions %></td>        <td><%= issue.assignee %></td>        <td><%= issue.environment %></td>        <td><%= issue.description %></td>        <td><%= issue.labels %></td>        <td><%= issue.epic %></td>        <td><%= issue.sprint %></td>
+        <div  class="w3-dropdown-hover">
+          <button class="w3-button">Actions</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <%= link_to 'Show', issue , :class =>"w3-bar-item w3-button"%>
+          <%= link_to 'Edit', edit_issue_path(issue) , :class =>"w3-bar-item w3-button"%>
+          <%= link_to 'Destroy', issue, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"w3-bar-item w3-button"%>
+          </div>
+        </div>
       </tr>
     <% end %>
   </tbody>
